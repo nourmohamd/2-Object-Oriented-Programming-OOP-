@@ -11,10 +11,10 @@ public:
     Num(int aa, int bb):a(aa), b(bb) {
         cout<<"Paramitrize Constructor"<<endl;
     }
-    friend int sum_a(Num n1, Num n2);
+    friend int sum_a(Num n1);
 };
-int sum_a(Num n1, Num n2) {
-    return n1.a + n2.a;
+int sum_a(Num n1) {
+    return n1.a + n1.b;
 }
 // Ex2:
 class Rectangle {
@@ -38,6 +38,31 @@ Rectangle duplicate(Rectangle n) {
     t1.height = n.height*2;
     return t1;
 }
+// Ex3: Sum Property From Class With Another Class
+class Triangle;
+class CRectangle {
+private:
+    int width, height;
+public:
+    void set_values(int a, int b) {
+        width = a;
+        height = b;
+    }
+    friend sum(CRectangle cr, Triangle tr);
+};
+class Triangle {
+private:
+    int w, h;
+public:
+    Triangle(int a, int b) {
+        w = a;
+        h = b;
+    }
+    friend sum(CRectangle cr, Triangle tr);
+};
+int sum(CRectangle cr, Triangle tr) {
+    return cr.width + tr.w;
+}
 int main() {
     // Friend Function
     /*
@@ -48,12 +73,11 @@ int main() {
     */
 
     // Ex1: Called sum_a For Class Num:
-    Num n1(10, 20), n2(20, 10);
-    cout<<sum_a(n1, n2)<<endl;
+    Num n1(10, 20);
+    cout<<sum_a(n1)<<endl;
     /*
         Output:
         =======
-        Paramitrize Constructor
         Paramitrize Constructor
         30
     */
@@ -72,7 +96,11 @@ int main() {
         160
     */
 
-
+    // Ex3: Called Function For Sum Property From Two Classes
+    CRectangle cr;
+    cr.set_values(2, 3);
+    Triangle t(8, 7);
+    cout<<sum(cr, t)<<endl;
 
     return 0;
     system("PAUSE");
