@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//z
+// Example For Operator + - / * Only Replace + To * Or - Or / :
 class C {
 private:
     int x, y;
