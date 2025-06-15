@@ -6,7 +6,7 @@ private:
     int x, y, z;
 public:
     Relational() {
-        x = y = z;
+        x = y = z = 0;
         cout<<"Empty Constructor"<<endl;
     }
     Relational(int i, int j, int k) {
