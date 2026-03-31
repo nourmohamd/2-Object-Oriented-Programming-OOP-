@@ -79,7 +79,7 @@ struct full_name {
 int main() {
     // Structure
     /*
-        You Can DataType Accept Many DataType Like Class
+        You Can Create|Build DataType Accept Many DataType Like Class
     */
     Car c1;
     c1.name = "Kia";
