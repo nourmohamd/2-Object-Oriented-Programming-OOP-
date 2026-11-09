@@ -39,11 +39,11 @@ private:
     Exam exam;
 public:
     Subject() {
-        strcpy_s(name, "No Name");
+        strcpy(name, "No Name");
         exam = {0, 0, 0};
     }
     Subject(char n[], float fr, float se, float fi) {
-        strcpy_s(name, n);
+        strcpy(name, n);
         exam.first = fr;
         exam.second = se;
         exam.final = fi;
@@ -136,6 +136,11 @@ int main() {
     f1.fullName.last_name = "Nour";
     cout<<f1.fullName.last_name<<endl;
     cout<<f1.fullName.first_name<<endl;
+    full_name *ptr2;
+    ptr2 = &f1;
+    cout<<ptr2->fullName.first_name<<" "<<ptr2->fullName.last_name<<endl;
+    // Note: Pointer Access To First Parameter With -> And For Other Use Dot .
+    
     return 0;
     system("PAUSE");
 }
