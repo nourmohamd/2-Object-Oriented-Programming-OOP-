@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <cstring>
 using namespace std;
 // Example About Empty Constructor
 class Triangle {
@@ -53,16 +53,16 @@ private:
 public:
     Student() {
         cout<<"First Constructor"<<endl;
-        strcpy_s(name, "No Name");
+        strcpy(name, "No Name");
         id = 0;
     }
-    Student(char n[]) {
+    Student(const char n[]) {
         cout<<"Paramitriz Constructor"<<endl;
-        strcpy_s(name, n);
+        strcpy(name, n);
     }
-    Student(char n[], int i = 0) {
+    Student(const char n[], int i) {
         cout<<"Paramitriz Constructor"<<endl;
-        strcpy_s(name, n);
+        strcpy(name, n);
         id = i;
     }
     void print() {
@@ -138,7 +138,23 @@ int main () {
         Base 100
         Height 200
     */
-
+	
+	// Ex4:
+	Student s1, s2("Ahmad"), s3("Mohamed Nour", 5379);
+	s1.print();
+	s2.print();
+	s3.print();
+	/*
+		First Constructor
+		Paramitriz Constructor
+		Paramitriz Constructor
+		Name No Name
+		Id 0
+		Name Ahmad
+		Id 0
+		Name Mohamed Nour
+		Id 5379
+	*/	
     // Ex3:
     Copy c1(10,20), c2(c1);
     c1.print();
