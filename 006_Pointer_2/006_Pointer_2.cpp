@@ -41,10 +41,11 @@ private:
 public:
     Student():id(0) {
         cout<<"Empty Constructor"<<endl;
+        strcpy(name, "No Name");
     }
     Student(char n[], int i):id(i) {
         cout<<"Paramitrize Constructor"<<endl;
-        strcpy_s(name, n);
+        strcpy(name, n);
     }
     void print();
 };

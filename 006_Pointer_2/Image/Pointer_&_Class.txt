@@ -1,0 +1,14 @@
+Class: Student
+┌─────────────────────┐
+│  Student object     │
+│  ┌───────────────┐  │
+│  │ name = "Ali"  │  │
+│  │ age  = 20     │  │
+│  └───────────────┘  │
+└─────────────────────┘
+         ▲
+         │  points to
+         │
+   ┌───────────┐
+   │  ptr      │  ← Student* ptr = new Student("Ali", 20);
+   └───────────┘ || Student* ptr = &Object_Initialization_Before;
