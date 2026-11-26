@@ -1,0 +1,50 @@
+                C++ ENUMERATION (enum)
+
+       enum Day {
+           Sunday,     // 0
+           Monday,     // 1
+           Tuesday,    // 2
+           Wednesday,  // 3
+           Thursday,   // 4
+           Friday,     // 5
+           Saturday    // 6
+       };
+
+                      │
+                      ▼
+
+        +-------------+-------------+
+        | Enumerator  | Integer     |
+        +-------------+-------------+
+        | Sunday      | 0           |
+        | Monday      | 1           |
+        | Tuesday     | 2           |
+        | Wednesday   | 3           |
+        | Thursday    | 4           |
+        | Friday      | 5           |
+        | Saturday    | 6           |
+        +-------------+-------------+
+
+Example Usage:
+
+Example1:
+=========
+    Day today = Thursday;
+
+    if (today == Thursday)
+        cout << "Today is Thursday";
+
+Example2:
+=========
+	enum Color
+	{
+	    Red   = 5,
+	    Green = 10,
+	    Blue  = 15
+	}
+
+   	     ▼
+
+  	 Red   → 5
+ 	 Green → 10
+  	 Blue  → 15
